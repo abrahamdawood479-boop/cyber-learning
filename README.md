@@ -1,2 +1,2 @@
-# cyber-learning
-for learning cyber security
+# cybersecurity learning
+# step by step personal coding projects
