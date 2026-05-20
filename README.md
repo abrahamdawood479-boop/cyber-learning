@@ -1,2 +1,3 @@
 # cybersecurity learning
-# step by step personal coding projects
+# programing/coding projects
+# all languages
