@@ -1218,11 +1218,46 @@ A for loop will execute a block of code a specific amount of times. FYI: i++ is 
  
  
 ### SEARCH AN ARRAY FOR AN ELEMENT###
+
+//look at example code below
+
+
+ #include <iostream>
+
+int searcharray(int array[], int size, int elements);
+
+int main() {
+    
+    int array[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int size = sizeof(array)/sizeof(array[0]);
+    int index;
+    int mynum;
+    
+    std::cout << "enter element to search for: ";
+    std::cin >> mynum;
+    
+    index = searcharray(array, size, mynum);
+    if(index != -1){std::cout << mynum << " is at index" << index;}
+    else{ std::cout << mynum << "is not in the array";}
+    
+    return 0;
+}
+int searcharray(int array[], int size, int elements){
+    
+    for(int i = 0; i < size; i++){
+        if(array[i] == elements){
+            
+            return i;
+        }
+    }
+    return -1;
+    
+}
+
+
  
  
- 
- 
- 
+### SORTING AN ARRAY ### 
  
  
  
