@@ -1,0 +1,1252 @@
+/*
+ ###important libraries to include###
+ #include <iostream>
+ #include <cmath>
+
+ 
+ ###always start with this and put everything inside of it###
+main()
+{}
+ 
+ 
+ ###must know SYNTAX###
+ standard is std::cout <<, or std::cin >> and we have <<std::endl at the end and return 0
+ 
+ 
+ 
+ ###versatile SYNTAX and functions for getting started###
+    typedef = alais or make an abrevaited name -> std::cout << jack or whatver >> cat_list
+    const (make sure if future variable is mentioned and value is changed on accident it wont rechange the origional value.
+    using (you link it to other things)
+    namespace (create own catagory and can refer to it inside your main() by std::cat_name (variable or whatevr);
+ 
+ 
+ 
+ ###VARIABLE TYPES###
+    bool (boolean variable = true or false)
+    double (numbers with deicmals + whole numbers)
+    int (only whole numbers)
+    char (one letter texts) (with number translates to ascii text)
+    std::string (one letter text up to a string as long as you want)
+ 
+ 
+ 
+ ###idk use but will find out###
+ type conversion, implicit and explicit
+    
+ 
+ 
+ ###SYNTAX to stop very common and important bugs###
+ std::getline(std::cin, name); so that if someone types their name in with spaces we see the whole thing instead of not seeing the next part which is after the space. ws = white space, gets rid of white space so when you enter a value it does put ut answer 2 spaces down where the cout message is on temrinal.
+ std::getline(std::cin >> std::ws, name);
+ 
+ 
+ 
+ ###MATH RELATED FUNCTIONS ### (inside cmath lib)(numbers only not used for words) ### go to www.cplusplus.com for lots more
+ std::max(var_1,var_2) largest of the compared variables
+ std::min(var_1,var_2) smallest of the compared variables
+ std::pow(var_1, number) sqaure roots the variable by the number inside of comma
+ std::sqrt(value) square root number inside brackets
+ std::abs() find absolute value
+ std::round() round number
+ std::ceil() ceiling number which is always rounding up
+ std::floor() always round down
+ 
+ 
+ 
+ ###IF STATEMENTS###
+ the SYNTAX is:
+ 
+ if(write the if in here){
+ 
+ (everything that happens in the curly braces is the code that'll be executed
+ which is determined by what happens in the "if(type here)" section
+ so "if(variable <= 19)" {this this and this will happen then}
+ 
+ }
+ the order goes like this
+ if(){} ###(first rule)###
+ else if(){} ###(if first rule is gone through in any ways then its sent to this which is the next rule)###
+ else{} ###(if those two are gone through in any way well then this happens)###
+ 
+ order matters alot in if statements, if i say if ur older than 18 u can access my web
+ but the next rule i put is if your over 100 you cant access it, when i go to type it
+ in the terminal and put 110, it'll let me in because im techinically 18+ and c++
+ doesn't take others into initiative or atleast for if statements so its important to
+ put if statments in best positions so i would put the over 100 rule first than the 18+ rule
+ so that if i type 100 it wont let me and if i type anything between 18-99 it'll let me in.
+ 
+ 
+ 
+###COMPARISON OPERATORS###
+ >= (greater than or equal to)
+ <= (less than or equal to)
+ == (equals to)
+ != (not equal to)
+ > (greater than)
+ < (less than)
+ 
+ 
+ 
+ ###SWITCHES###
+ This is used to put a bunch of repetative if statements into one.
+ if we have 1=jan 2=feb 3=mar and so on we would want to put all these in one small block that does everything
+ as if we wrote each one out seperatley, same job but more efficient.
+ 
+ ###SYNTAX###
+ switch(variable){
+     case 1:
+         std::cout << "it's january";
+         break;
+     case 2:
+         std::cout << "it's febuary";
+         break;
+     default:
+         std::cout << "non or whatever you want to type"; (this is kinda like the else statement)
+ }
+ 
+ and ye you get the point so forth
+ 
+ 
+ 
+ ###TERNARY OPERATORS###
+(parenthesis is optional but you'll see the structure.)
+ 
+ ? = if
+ : = else if
+ 
+for example instead of typing all this
+ 
+# #include <iostream>
+# #include <cmath>
+
+# int main(){
+#     int grade;
+#     std::cout << "type grade: ";
+#     std::cin >> grade;
+
+     
+#     if(grade < 50)
+#     {std::cout << "you failed \n";}
+     
+#     else if(grade > 50)
+#     {std::cout << "you pass \n";}
+# }
+ 
+ ##YOU CAN TYPE THIS##
+ 
+# #include <iostream>
+# #include <cmath>
+
+# int main(){
+#     int grade;
+#     std::cout << "type grade: ";
+#     std::cin >> grade;
+     
+#     grade < 50? std::cout << "you failed \n" : std::cout << "you pass \n";
+     
+#     return 0;
+# }
+
+
+##another thing is this##
+# #include <iostream>
+# #include <cmath>
+
+# int main(){
+#     bool thirsty = false;
+#     thirsty ? std::cout << "true" : std::cout << "false";
+     
+    
+#     return 0;
+# }
+ 
+ 
+ 
+ ###LOGICAL OPERATORS###
+ && = check if two conditions are true (this and this have to be true)
+ || = check if one of two conditions are true (either this or this has to be true doesn't have to be both)
+ ! = reverse the logical state of its operand (true is false, false is true)
+ 
+ 
+ ###you can try this code for &&###
+ 
+# #include <iostream>
+# #include <cmath>
+
+# int main(){
+#     int temp;
+#     std::cout << "enter temperature: ";
+#     std::cin >> temp;
+     
+#     if(temp > 0 && temp < 30){
+#         std::cout << "nice temperature \n";
+#     }
+#     else if(temp > 30 && temp < 50){
+#         std::cout << "shit weather \n";
+#     }
+#     else {std::cout << "not within range \n";}
+     
+#     return 0;
+# }
+
+ ###you can try this code for ||###
+ 
+# # include <iostream>
+# #include <cmath>
+
+# int main(){
+     
+#     int temp;
+#     std::cin >> temp;
+     
+#     if (temp < 0 || temp > 40) {
+#         std::cout << "Stay indoors! \n";
+#     }
+#     else if (temp > 0 || temp < 40){
+#         std::cout << "it's ok to be outdoors \n";
+#     }
+# }
+ 
+ ###you can try this code or !###
+ # # include <iostream>
+ # #include <cmath>
+
+
+ # int main(){
+     
+ #    bool hungry = true;
+     
+ #    if(hungry){
+ #        std::cout << "yes i am hungry \n";
+ #    }
+
+ #    else if(! hungry){
+ #        std::cout << "i am not hungry \n";
+ #    }
+
+ # }
+ 
+ ANSWER: "yes i am hungry
+ if we changed bool hungry = true; into false then we would get the answer of
+ ANSWER: i am not hungry
+ 
+ 
+ 
+ ###TEMPURATURE CONVERTER PROJECT###
+ #include <iostream>
+ #include <cmath>
+
+ int main(){
+     
+     double temp;
+     char unit;
+     
+     std::cout << "###tempurature calculator### \n";
+     std::cout << "F = fahrenheit \n";
+     std::cout << "C = celcius \n";
+     std::cout << "what unit would you like to convert to: ";
+     std::cin >> unit;
+     
+     if(unit == 'f' || unit == 'F'){
+         std::cout << "enter tempurature in celcius: ";
+         std::cin >> temp;
+         temp = (1.8 * temp) + 32;
+         std::cout << "tempurature is " << temp << " degrees celcius \n";
+     }
+     else if(unit == 'c' || unit == 'C'){
+         std::cout << "enter tempurature in degrees farenheit ";
+         std::cin >> temp;
+         temp = (temp - 32) / 1.8;
+         std::cout << "tempurature is " << temp << " degrees celcius \n";
+     }
+     else{ std::cout << "only pick c or f \n";}
+     
+     return 0;
+         
+     }
+
+ 
+ ###SOME FUNCTIONS###
+ .length() finds length of something, usually a string like name.length();
+ .empty() checks if a string or container is completely empty, returning true if it has no data and false if it contains text or elements.
+ .clear() is a method to clear a variable
+ 
+ .append("another string") is to append another string to  a variables value so if
+ # std::string name = "idiot sandwich";
+ # name.append("is not a fun number");
+ # std::cout << name;
+ 
+ .at() prints out the letter of the word you type in
+ 
+ # std::string name;
+ # std::getline(std::cin, name);
+ # name.at(2)
+ if i type abraham it'll respond with r because 1st letter in a word starts at 0 not
+ 
+ .insert("number", "a character") we can use this to add something in the middle of the word
+ # std::string name;
+ # std::getline(std::cin, name);
+ # name.insert(2, "@"); OR std::cout << name.insert(2, "@"); (get rid of line below then)
+ # std::cout << name;
+ it will print out ab@raham, it always goes behind the character of the letter u specified, essentially taking its place.
+ 
+ .find("whatever u seek to find") lets you find what you want in the variables value (a string for example)
+ # std::string name;
+ # std::getline(std::cin, name);
+ # name.find("a"); OR std::cout << name.find("a"); (get rid of line below)
+ # std::cout << name;
+ 
+ .erase() is to delete something from the string
+ # std::string name;
+ # std::getline(std::cin, name);
+ # name.erase(2,4); OR std::cout << name.erase(2,3); (delete line below then) //this means chracters 2 to 4 NOT 2 and 4
+ # std::cout << name;
+ 
+ 
+ 
+ ### WHILE LOOPS ###
+ look at project to understand:
+ 
+# #include <iostream>
+# #include <cmath>
+# #include <string>
+
+# int main(){
+     
+#     std::string name;
+     
+#     while(name.empty()){ //while this is true or in onther words, as long as this is true
+#         std::cout << "enter your name: "; // execute these commands
+#         std::getline(std::cin, name); // execute these commands
+#     }
+#     std::cout << "hello " << name; //print out like normal
+#     //this will continue forever until something changes
+     
+#     //if we put 1==1 in the while("put here") then you don't even have to press any buttons, it will just go forever LITERALLY
+# }
+ 
+ 
+ 
+### DO WHILE LOOPS ###
+ this operates a block of code then repeats it again depending if it's still =true
+ 
+ #include <iostream>
+ #include <cmath>
+ #include <string>
+
+ int main(){
+     
+     int number;
+     
+     do{
+         std::cout << "please enter a positve number: ";
+         std::cin >> number;
+         //everything from do to right before the while section essentially means, do all this first then check wheather it matches the rules in the while statement.
+         
+     } while(number < 0);
+     std::cout << "this number is positive. \n";
+     //here means if true print out the message below, otherwise restart the whole piece of code all the way to the top until they enter something that fits the requirement.
+ }
+
+ 
+ ### FOR LOOPS ###
+A for loop will execute a block of code a specific amount of times. FYI: i++ is what u want to go up by so
+
+ 
+ #include <iostream>
+ #include <cmath>
+ #include <string>
+
+ int main(){
+     
+     for(int i = 1; i <= 10; i++){
+         std::cout << i << '\n';
+     } // is i == 10? no so plus 1(this comes from i++ (++ = +1 )and it can be modified for example i=+2) to i's variable number, then it counts and keeps chekcing if it goes over 10, once it does it doesn't let, it stops at 10 then says !!!happy new year!!!
+ 
+     std::cout << "!!!happy new year!!! \n"; //this is outside the for loop which means once timer reaches 10 in says !!!happy new year!!!
+ }
+ 
+ 
+ ## NEXT FOR LOOP ##
+
+ 
+ #include <iostream>
+ #include <cmath>
+ #include <string>
+
+ int main(){
+     
+     for(int i = 1; i <= 10; i++){
+         
+         std::cout << "!!!happy new year!!! \n"; // this is inside the for loop which means it prints "!!!happy new year 10 times!!!
+     }
+ //this will keep adding up to the number 10 until it reaches 10, after it reaches its goal which is 10 it then prints !!!happy new year!!! 10 times
+ }
+ //you can also use other operators like -- which counts down and like i said i=+number to count up or down by.
+ 
+ 
+ 
+ ### BREAK AND CONTINUE ###
+ break = break out of loop
+ continue = skip current iteration
+ 
+ ## CODE 1 ##
+ int main(){
+     
+     for(int i = 1; i <= 20; i++){
+         if(i == 13){
+             break; //this makes the count stop at 13
+         }
+         std::cout << i << '\n';
+     }
+     return 0;
+ }
+ 
+ ## CODE 2 ##
+ int main(){
+     
+     for(int i = 1; i <= 20; i++){
+         if(i == 13){
+             continue; //this will count to 20 but skip 13
+         }
+         std::cout << i << '\n';
+     }
+     return 0;
+ }
+
+ 
+ 
+### NESTED LOOPS ###
+ a loop is the stuff you've learned like if statements, while, for and all that. its a mix inside eachother so an if statement in a while statement or a for statement in an if statement.
+ 
+ ## CODE 1 ##
+ 
+# #include <iostream>
+# #include <cmath>
+# #include <string>
+
+# int main(){
+ 
+#     for(int i = 1; i <= 3; i++){
+         
+#         for(int j = 1; j <= 10; j++){
+#             std::cout << j << ' ';
+#         }
+#         std::cout << '\n';
+#     }
+     
+     
+#     return 0;
+# }
+ 
+ 
+## CODE 2 ##
+ 
+# int main(){
+     
+#     int rows;
+#     int columns;
+#     char symbol;
+    
+#     std::cout << "how many row? ";
+#     std::cin >> rows;
+#     std::cout << "how many columns? ";
+#     std::cin >> columns;
+#     std::cout << "enter symbol to use: ";
+#     std::cin >> symbol;
+     
+#     for(int i = 1; i <= rows; i++){
+         
+#         for(int j = 1; j <= columns; j++){
+#             std::cout << symbol;
+             
+#         }
+#         std::cout << '\n';
+#     }
+         
+ 
+ 
+### RANDOM NUMBER GENERATOR ###
+ 
+ Pseudo-random: Not truly random; a predictable sequence of numbers that looks random.
+ srand(seed): Sets the starting point. (Opens the random book to a specific page).
+ time(): Gets the current system time in seconds. (A constantly changing number).
+ rand(): Grabs the next number in the sequence. (Reads the next number on the page).
+ NULL: Means "nothing". (Tells time() to just return the value, not save it elsewhere).
+ 
+ ## CODE 1 ##
+# int main(){
+     
+#     srand(time(NULL)); //
+#     int num = (rand() % 20) + 1;
+#     std::cout << num << '\n';
+     
+#     return 0;
+# }
+
+ 
+ 
+ ### RANDOM EVENT GENERATOR ###
+ 
+ #include <ctime> //this is a library you'll need to use
+ 
+ ## CODE 1 ##
+# #include <iostream>
+# #include <cmath>
+# #include <string>
+# #include <ctime>
+
+# int main(){
+     
+#     srand(time(0));
+ // the number inside time() is the slot number of the memory location, 0 means don't save data, time() picks up the very second that  is current since 1970. Since time is always moving forwards it will always be random.
+     
+#     int randnum = rand() % 5+1;
+ // rand()%5 generates 0-4 (remainders). +1 shifts it to 1-5. Putting just "6" makes it a fixed number, losing all randomness.
+ // srand() picks the page to collect from, while rand() is the one that picks the number from the page.
+ // we use % with it Because rand() gives you such massive numbers, we use the modulo operator (% 5) to chop that huge number down into a small, useful range (like 1 to 5) for our game.
+   
+#     switch(randnum){
+ // switch() evaluates randnum and jumps directly to the matching case. It replaces long if/else chains.
+             
+#         case 1: std::cout << "you won $5 \n";
+#             break; // Exits the switch. Without break, code "falls through" and runs the next cases too.
+#         case 2: std::cout << "you won $10 \n";
+#             break;
+#         case 3: std::cout << "you won $100 \n";
+#             break;
+#         case 4: std::cout << "you won $1000 \n";
+#             break;
+#         case 5: std::cout << "you get nothing \n";
+#             break;
+#     }
+# }
+
+ 
+ 
+### NUMBER GUESSING GAME ###
+ 
+ #include <iostream>
+ #include <cstdlib>
+ #include <ctime>
+
+# int main (){
+#     int num;
+#     int guess;
+#     int tries = 0;
+     
+#     srand(time(NULL));
+#     num = rand() % 100 + 1;
+     
+#     std::cout << "********** number guessing game ********** \n";
+     
+#         do{
+#         std::cout << "enter a guess between 1-100: ";
+#         std::cin >> guess;
+#         tries = tries + 1;
+             
+#         if(guess > num){
+#             std::cout << "too high! \n";
+#         }
+#         else if(guess < num){
+#             std::cout << "too low! \n";
+#         }
+#         else{ std::cout << "you are correct! \n";
+#             break;
+#         }
+             
+#         std::cout << "try: " << tries << "\n\n";
+             
+#     }while(guess != num && tries < 3);
+     
+#     if(tries >= 3 && guess != num){
+#         std::cout << "you ran out of tries and got it wrong, haha idiot \n";
+         
+#     }
+     
+#     std::cout << "********** GAME FINISHED! ********** \n";
+     
+#     return 0;
+     
+# }
+
+
+ 
+ 
+### USER DEFINED FUNCTIONS ###
+ //function is a block of reusable code
+ 
+ #include <iostream>
+
+# void happyBirthday(you can also add data here "parameter" like int age or std::string name or both at the same time using "," if u have them declared as actual variables above in your code){
+#     std::cout << "happy birthday to you! \n";
+#     std::cout << "happy birthday to you! \n";
+#     std::cout << "happy birthday dear you! \n";
+#     std::cout << "happy birthday to you! \n";
+# }
+
+# int main(){
+     
+#     happyBirthday();
+     
+#     return 0;
+     
+# }
+ 
+ 
+ 
+ 
+ ### RETURN KEYWORDS ###
+ 
+ //Data Courier: The return keyword sends a calculated value back to the code that called the function.
+
+ //Value Replacement: It replaces the function call (like square(6.0)) with the actual answer (like 36.0) so variables can store it.
+
+ //Invisible Action: Returning data is done internally by the computer, so you still need std::cout if you want a human to see it on screen.
+ 
+ 
+ ## CODE 1 ##
+ 
+# #include <iostream>
+
+# double square(double length);
+# double cube(double length);
+
+# int main(){
+     
+#     double length = 6.0;
+#     double area = square(length);
+#     double volume = cube(length);
+     
+#     std::cout << "area: " << area;
+#     std::cout << "volume: " << volume;
+     
+#     return 0;
+     
+# }
+
+# double square(double length){
+     
+#     return length * length;
+# }
+
+ 
+ ## MORE INFO ##
+ 
+ //Automatic Alignment: Variables are matched automatically based on their left-to-right order, regardless of what names you give them.
+
+ //Temporary Labels: Names like string1 or stick6 are just local placeholders that automatically catch whatever data is passed in.
+ 
+ 
+ ## CODE 2 ##
+# #include <iostream>
+
+# std::string concatstrings(std::string string1, std::string string2);
+
+# int main(){
+     
+#     std::string name = "cheese";
+#     std::string lastname = "burger";
+#     std::string fullname = concatstrings(name, lastname);
+     
+#     std::cout << "hello " << fullname;
+     
+#     return 0;
+# }
+
+# std::string concatstrings(std::string string1, std::string string2){
+     
+#     return string1 + " " + string2;
+# }
+
+ 
+ 
+ 
+ ### OVERLOADED FUNCTIONS ###
+ 
+ //Same Name, Different Blueprints: Overloading lets you reuse the exact same function name multiple times as long as each version takes different types or amounts of data.
+
+ //Automatic Routing: The compiler automatically checks the values inside your parentheses and instantly matches them to the correct function version.
+
+ //No Name Confusion: You do not need to invent clumsy names like printInt() or printString(); C++ handles the separation behind the scenes based purely on position and data types.
+ 
+ 
+ 
+ ## CODE 1 ##
+ 
+ #include <iostream>
+ #include <string>
+
+ // --- 1. THE FIRST FUNCTION ---
+ // Takes just one integer
+ void printData(int score) {
+     std::cout << "Score: " << score << "\n";
+ }
+
+ // --- 2. THE SECOND OVERLOADED FUNCTION ---
+ // Same name, but takes a string instead
+ void printData(std::string name) {
+     std::cout << "Name: " << name << "\n";
+ }
+
+ // --- 3. THE THIRD OVERLOADED FUNCTION ---
+ // Same name, but takes both a string AND an integer
+ void printData(std::string name, int score) {
+     std::cout << "Player " << name << " scored " << score << " points!\n";
+ }
+
+ int main() {
+     // Uses the 1st function (matches the integer slot)
+     printData(150);
+     
+     // Uses the 2nd function (matches the string slot)
+     printData("Mario");
+     
+     // Uses the 3rd function (matches both slots in order)
+     printData("Luigi", 250);
+     
+     return 0;
+ }
+ 
+ 
+ 
+ 
+ ### VARIABLE SCOPE & getting VOID sorted out ###
+ // Local variables = declarerd only inside a function or block {} #ALWAYS USE LOCAL WHEN YOU CAN ITS MUCH SAFER AND SPECIFIC SO YOUR CODE DOESN'T USE THE WRONG VARIABLES.
+ // Global variables = declared outside all functions
+ 
+ 
+ ## CODE 1 ## FOR LOCAL VARIABLES
+ 
+ //think of the void and printnum() as packages
+
+# #include <iostream>
+
+# void printnum(int mynum); // this sets up the package name called printnum(inside here is the criteria we check to find the specific variable and take it, this can also be changed into a parameter)
+
+# int main() {
+     
+#     int mynum = 1; // the variable that will be taken, it has a value of 1
+#     printnum(mynum); //no void this time because we don't need to set up the package we just take the name and put the variable name inside printnum(here goes the variable)
+# }
+
+# void printnum(int mynum){ //we use void again to confirm we have secured the other side of the "deal" of using the void function
+#     std::cout << mynum; //the next thing is for it to be printed so now it will be printed
+ // the reason why it has its own (){} like int main instead of just (); like the first one is because we have instrcytions inside which is std::cout << mynum;
+# }
+     
+ 
+ ## CODE 2 ## FOR GLOBAL VARIABLES
+ 
+ #include <iostream>
+
+ int mynum = 1; // 🌍 GLOBAL VARIABLE (Outside all functions)
+
+ void printnum(); // Notice: No parameter needed in the contract anymore!
+
+ int main() {
+     printnum(); // Notice: No package needs to be passed!
+ }
+
+ void printnum() {
+     std::cout << mynum; // It can just reach out and grab it directly
+ }
+
+
+ 
+  
+ ### EXTRA CODE FOR YOU TO READ AND LEARN ###
+ 
+ ## CODE 1 ##
+ 
+ 
+ #include <iostream>
+
+ // The Deal: This package is named "doubleNum".
+ // It takes an int, and PROMISES to return an int back to you.
+ int doubleNum(int mynum);
+
+ int main() {
+     int original = 5;
+     
+     // We call the package, it does the math, and returns a 10.
+     // We catch that 10 and save it into a new variable called 'result'.
+     int result = doubleNum(original);
+     
+     std::cout << result; // Prints 10
+ }
+
+ // Fulfilling the Deal
+ int doubleNum(int mynum) {
+     int calculatedAnswer = mynum * 2;
+     
+     return calculatedAnswer; // This shoots the value back to main()!
+ }
+
+
+ ## CODE 2 ##
+ 
+ #include <iostream>
+ #include <string> // Needed for text
+
+ // "The Deals" (Declarations)
+ void printnum(int mynum);       // Version 1: Takes an integer
+ void printnum(double mynum);    // Version 2: Takes a decimal number
+ void printnum(std::string text);// Version 3: Takes actual text!
+
+ int main() {
+     int x = 5;
+     double y = 3.14;
+     std::string z = "Hello";
+
+     printnum(x); // Automatically triggers Version 1
+     printnum(y); // Automatically triggers Version 2
+     printnum(z); // Automatically triggers Version 3
+ }
+
+ // "Fulfilling the Deals" (Definitions)
+ void printnum(int mynum) { std::cout << "Integer: " << mynum << "\n"; }
+ void printnum(double mynum) { std::cout << "Decimal: " << mynum << "\n"; }
+ void printnum(std::string text) { std::cout << "Text: " << text << "\n"; }
+
+ 
+ 
+ 
+### CODE EXCERSISE (BANKING SYSTEMM) ###
+ //we are manking bank access options, to withdraw, deposite, check balance, exit interface
+ 
+# #include <iostream>
+
+ // It is best practice to declare variables inside main()
+# int main() {
+     // 1. Initialise our starting data
+#     int balance = 1000; // Give them some starting money!
+#     int pin = 0;
+#     int choice = 0; // We only need ONE variable to track their menu choice
+#     int amount = 0; // Temporary variable for deposit/withdraw amounts
+
+     // 2. Ask for the PIN *before* the loop starts
+#     std::cout << "Hi there! What brings you here?\n";
+#     std::cout << "Please enter pin: ";
+#     std::cin >> pin;
+
+     // 3. Check if the PIN is correct (123)
+#     if (pin == 123) {
+#         std::cout << "\nAccess Granted!\n";
+
+         // 4. The do-while loop handles the menu and actions
+#         do {
+             // Display the 4 choices in front of them
+#             std::cout << "\n--- ATM MENU ---\n";
+#             std::cout << "1. Withdraw money\n";
+#             std::cout << "2. Deposit money\n";
+#             std::cout << "3. Check balance\n";
+#             std::cout << "4. Exit\n";
+#             std::cout << "Enter your choice: ";
+#             std::cin >> choice; // Get their choice (1, 2, 3, or 4)
+
+             // 5. Use switch(choice) to execute the chosen option
+#             switch (choice) {
+#                 case 1: // Withdraw
+#                     std::cout << "Enter how much to withdraw: $";
+#                     std::cin >> amount;
+#                     if (amount <= balance) {
+#                         balance = balance - amount; // Update the balance variable
+#                         std::cout << "You successfully withdrew $" << amount << "\n";
+#                         std::cout << "You have $" << balance << " remaining.\n";
+#                     } else {
+#                         std::cout << "Insufficient funds! You only have $" << balance << "\n";
+#                     }
+#                     break;
+
+#                 case 2: // Deposit
+#                     std::cout << "Enter how much to deposit: $";
+#                     std::cin >> amount;
+#                     balance = balance + amount; // Update the balance variable
+#                     std::cout << "You now have $" << balance << "\n";
+#                     break;
+
+#                 case 3: // Balance Check
+#                     std::cout << "Your balance is $" << balance << "\n";
+#                     break;
+
+#                 case 4: // Exit
+#                     std::cout << "Thank you for using the ATM. Goodbye!\n";
+#                     break;
+
+#                 default: // Invalid number typed
+#                     std::cout << "Please enter a valid option (1-4).\n";
+#                     break;
+#             }
+
+#         } while (choice != 4); // Loop keeps running UNTIL they choose option 4
+
+#     } else {
+#         std::cout << "Incorrect PIN. Access Denied!\n";
+#     }
+
+#     return 0;
+# }
+
+ 
+ 
+ 
+### CODE EXCERSISE (SCISSORS, PAPER, ROCK) I MADE MY OWN VERY FIRST CODE YAAAAYYYYY ###
+ 
+ #include <iostream>
+ #include <cstdlib>
+ #include <ctime>
+
+
+ int scissors_1;
+ int scissors_2;
+
+ int paper_1;
+ int paper_2;
+
+ int rock_1;
+ int rock_2;
+
+ int choice;
+
+
+ int main() {
+     
+     srand(time(nullptr));
+     std::cout << "********** SCISSORS PAPER ROCK GAME ********** \n";
+
+     std::cout << "pick a choice: \n";
+     std::cout << "1 = scissors: \n";
+     std::cout << "2 = paper: \n";
+     std::cout << "3 = rock: \n";
+     std::cout << "********************************************** \n";
+     
+     do {if(choice == 1){std::cout << "you picked scissors"; std::cin >> scissors_1;}
+     else if (choice == 2){std::cout << "you picked paper"; std::cin >> paper_1;}
+     else if (choice == 3){std::cout << " you picked rock"; std::cin >> rock_1;}
+     else if (choice < 1 || choice > 3){std::cout << "pick from 1-3: "; std::cin >> choice;}}
+     
+     while((choice < 1 || choice > 3));
+     
+     srand(time(nullptr));
+     int choice_2 = (rand() % 3) + 1;
+
+     if(choice_2 == 1){}
+     else if (choice_2 == 2){}
+     else if (choice_2 == 3){}
+     else {}
+     
+     if (choice_2 == choice){std::cout << " you both picked " << choice << " WHICH IS A TIE \n";}
+     else if (choice == choice_2){std::cout << " you both picked " << choice_2 << " WHICH IS A TIE \n";}
+     else if (choice_2 > choice){std::cout << "YOU PICKED " << choice << " AI PICKED " << choice_2 << " AI WINS \n";}
+     else if (choice > choice_2){std::cout << "YOU PICKED " << choice << " AI PICKED " << choice_2 << " YOU WIN \n";}
+
+     return 0;
+     
+ }
+
+ 
+ 
+ ### BETTER VERSION OF MY BANKING CODE (AI MADE IT) ###
+ 
+ #include <iostream>
+ #include <cstdlib>
+ #include <ctime>
+
+ int main() {
+     // 1. Seed the generator ONCE at the very top
+     srand(time(nullptr));
+     
+     // We only need ONE variable for you, and ONE for the AI
+     int choice = 0;
+
+     std::cout << "********** SCISSORS PAPER ROCK GAME ********** \n";
+     std::cout << "1 = scissors \n";
+     std::cout << "2 = paper \n";
+     std::cout << "3 = rock \n";
+     std::cout << "********************************************** \n";
+     
+     // 2. The Gatekeeper Loop: Always reads into 'choice'
+     do {
+         std::cout << "Pick a choice (1-3): ";
+         std::cin >> choice;
+         
+         if (choice < 1 || choice > 3) {
+             std::cout << "Invalid input! Try again.\n";
+         }
+     } while (choice < 1 || choice > 3);
+     
+     // Print out your confirmed choice
+     if (choice == 1) std::cout << "You picked scissors\n";
+     else if (choice == 2) std::cout << "You picked paper\n";
+     else if (choice == 3) std::cout << "You picked rock\n";
+
+     // 3. AI Turn (Happens instantly and automatically)
+     int choice_2 = (rand() % 3) + 1;
+     
+     if (choice_2 == 1) std::cout << "AI picked scissors\n";
+     else if (choice_2 == 2) std::cout << "AI picked paper\n";
+     else if (choice_2 == 3) std::cout << "AI picked rock\n";
+     
+     // 4. Standard Rock-Paper-Scissors Win/Loss Rules
+     if (choice == choice_2) {
+         std::cout << "You both picked the same thing! WHICH IS A TIE \n";
+     }
+     // Check all 3 specific ways YOU can win
+     else if ((choice == 1 && choice_2 == 2) || // Scissors beats Paper
+              (choice == 2 && choice_2 == 3) || // Paper beats Rock
+              (choice == 3 && choice_2 == 1))   // Rock beats Scissors
+     {
+         std::cout << "YOU WIN \n";
+     }
+     // If it's not a tie and you didn't win, the AI must have won
+     else {
+         std::cout << "AI WINS \n";
+     }
+
+     return 0;
+ }
+
+ 
+ 
+ 
+ ### ARRAYS ###
+ // arrays essentially are variables that can hold multiple values, even though it's more comlicated than that for now think of it that way before we get into deeper contents.
+ // arrays can only hold values of the same value family weather its int, bool, double, char, std::string.
+ // just like variables you can assign values later on
+ 
+ ## CODE 1 ##
+ 
+ #include <iostream>
+
+ int main(){
+     
+     std::string car[] = {"corvette", "mustang", "camery"}; //if i tried adding 1 there'll be an error
+     std::cout << car[0]<< std::endl;  // the 0 is for printing corvette because values start at 0 not 1
+     
+ }
+ 
+ ## CODE 2 ##
+ // I can also pre setup to assign variables later on like this
+ 
+ #include <iostream>
+
+ int main(){
+     
+     std::string car[];
+     car[0] = "variable";
+     car[1] = "variable";
+     car[2] = "variable";
+     
+     std::cout << cars[0] << '\n' // put \n if you want space down
+     std::cout << cars[1] << '\n' // put \n if you want space down
+     std::cout << cars[2] << '\n' // put \n if you want space down
+ }
+ 
+ 
+
+ 
+ ### SIZEOF() OPERATOR ###
+ // sizeof() = determines the size in bytes of a: variable, data type, class, objects, etc.
+ // its a helpfull function in finding out how many bites a datatype takes.
+ 
+ ## CODE 1 ##
+ 
+ #include <iostream>
+
+ int main(){
+     
+     double gpa = 2.5;
+     
+     std::cout << sizeof(gpa) << " bytes \n";
+     
+     return 0;
+     // the answer will be print "8 bytes"
+ }
+ 
+ ## CODE 2 ##
+ 
+ #include <iostream>
+
+ int main(){
+     
+     std::string money = "3000000000";
+     
+     std::cout << sizeof(money) << " bytes \n";
+     
+     return 0;
+     
+ }
+ 
+ ## CODE 3 ##
+// we can also calculate the amount of space "bytes" arrays are using as well.
+ 
+ #include <iostream>
+
+ int main(){
+     
+     double gpa = 2.5;
+     char grade = 'f';
+     bool student = true;
+     char grades[] = {'A', 'B', 'C', 'D', 'F'};
+     std::string students[] = {"sponge bob", "patrick", "squidward"};
+     
+     std::cout << sizeof(grades) << " bytes \n";
+     std::cout << sizeof(char) << " bytes \n";
+     std::cout << sizeof(grades)/sizeof(char) << " elements \n";
+     std::cout << sizeof(students)/sizeof(std::string) << " elements \n";
+     
+     
+     return 0;
+ }
+
+ 
+ 
+ 
+ 
+ ### ITERATE OVER AN ARRAY ###
+ 
+ #include <iostream>
+
+ int main(){
+     
+     //------------------1st one-----------------------
+
+     //instead of listing all the names one by one.
+     std::string students[] = {"abe", "jose", "karen", "charel"};
+     std::cout << students[0] << '\n';
+     std::cout << students[1] << '\n';
+     std::cout << students[2] << '\n';
+     std::cout << students[3] << '\n' << '\n';
+     
+     //------------------2nd one-----------------------
+
+     
+     //we can do whats below using a for loop.
+     
+     for(int i = 0; i < 4; i++){
+         std::cout << students[i] << '\n';
+     }
+     std::cout << '\n';
+     
+     //------------------3rd one-----------------------
+     
+     //the problem is that once we do that, if we add or subtract names the for loop won't update. To fix this we use the sizeof() function. we take the size of total bytes in the array students and divide it by the size of the data type we are using which is std::string.
+     
+     for(int i = 0; i < sizeof(students)/sizeof(std::string); i++){
+         std::cout << students[i] << '\n';
+     }
+     
+     //------------------------------------------------
+     
+     return 0;
+     //each one is better than the previous, the 1st one is manual, the 2nd one is semi automatic, the 3rd one is fully automatic
+ }
+
+ 
+ 
+ 
+ ### FOREACH LOOP ###
+// foreach loop = loop that eases the traversal over an iterable data set
+ 
+ 
+ #include <iostream>
+
+ int main(){
+     
+     //-------------------------the for loop example-------------------------------
+     
+     std::string students[] = {"abe", "jose", "karen", "charel"};
+     
+     
+      //we could write this
+     for(int i = 0; i < sizeof(students)/sizeof(std::string); i++){
+         std::cout << students[i] << '\n';
+     }
+     
+
+     // but there is an easier way with less syntax using foreach loop although its less flexible than for loops since with for loops we can go backward, forward, patterns like pick every second option and so on but with foreach loopd its where you simply start from the begining and go down to the end
+     
+         
+     //-------------------------the foreach loop example-------------------------------
+     
+ // we pick a variable name and for each seperate value in the array we can use a variable name and print out all the names in the array one by one seperatley (using '\n' for spacedown ofc) to print every single seperate value in the array from start to finish
+     
+     for((remember the data type ->) std::string student : students){
+         std::cout << student << '\n';
+     }
+     
+     return 0;
+
+ }
+         
+ // with the foreach loop its easier than the for loop when it comes to changing amount of seperate values there are in the array because it'll print out every one there is from start to finish
+
+     //--------------------------------------------------------------------------------
+
+
+ 
+ 
+### PASSING AN ARRAY TO A FUNCTION ###
+ 
+ // look at this example
+ 
+ #include <iostream>
+
+ double getTotal(double prices[], int size);
+
+ int main() {
+     double prices[] = {1.50, 6.45, 8.97, 5.00};
+     int size = sizeof(prices) / sizeof(prices[0]);
+     double total = getTotal(prices, size);
+
+     std::cout << "$" << total;
+     
+     return 0;
+ }
+
+ double getTotal(double prices[], int size) {
+     double total = 0;
+     for(int i = 0; i < size; i++) {
+         total += prices[i];
+     }
+     return total;
+ }
+
+
+ 
+ 
+### SEARCH AN ARRAY FOR AN ELEMENT###
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+}
+
