@@ -1257,10 +1257,76 @@ int searcharray(int array[], int size, int elements){
 
  
  
-### SORTING AN ARRAY ### 
- 
- 
- 
+### SORTING AN ARRAY (this implaments a Bubble Sort)### 
+
+ //if a bunch of numbers are all out of order in an array and we want to sort them from smallest to largest we have to examine 
+//if its smaller than a number, if it is it doesnt pass its position, if larger then it goes infront of it, this is done for every number
+// and is compared to every other number in the array
+
+## CODE 1 ##
+
+#include <iostream>
+
+// Function declaration: Tells the compiler a sorting function exists below main
+void sort(int array[], int size);
+
+int main(){
+    
+    int array[] = {0, 5, 2, 4, 9, 7, 3, 8, 6, 1, 10};
+    
+    // Calculates total elements: (Total Array Bytes / Bytes of 1 Element) = 44 / 4 = 11
+    // NOTE: Using index [3] is risky; index [0] is safer because it always exists
+    int size = sizeof(array)/sizeof(array[3]);
+    
+    // Calls the function to sort the array using Bubble Sort logic
+    sort(array, size);
+    
+    // Range-based loop: Loops through the array from start to finish
+    // 'element' is a temporary variable holding one number at a time per turn
+    for(int element : array){
+        
+        // Prints the current number held by 'element' followed by a space
+        std::cout << element << " ";
+        
+    }
+    
+}
+
+// Bubble Sort: Floats the largest numbers to the end one by one
+void sort(int array[], int size){
+    
+    int temp; // Temporary container used to hold a value during a swap
+    
+    // Outer loop: Counts how many passes. 11 items only need 10 passes to sort
+    for(int i = 0; i < size - 1; i++){
+        
+        // Inner loop: Compares adjacent items side-by-side (j vs j+1)
+        // '- i' stops it from re-checking numbers already sorted at the end
+        // '- 1' prevents 'j + 1' from going past the edge of the array
+        for(int j = 0; j < size - i-1; j++){
+            
+            // If the left number is bigger than the right number, swap them
+            if(array[j] > array[j + 1]){
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+                
+            }
+        }
+        
+    }
+    
+}
+
+
+
+
+### fill() FUNCTION ###
+
+//fill() = fills a range of elements with a specified value
+// fill(begin, end, value)
+
+
  
  
  
