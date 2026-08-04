@@ -1327,13 +1327,122 @@ void sort(int array[], int size){
 // fill(begin, end, value)
 
 
+## CODE 1 ##
+
+#include <iostream>
+
+int main(){
+    
+    std::string foods[100];
+    
+    fill(foods, foods + 100, "pizza");
+    
+    for(std::string food : foods){
+        
+        std::cout << food << '\n';
+        
+    }
+    
+    
+    
+}
+
+
+THE PROBLEM WITH THE FIRST CODE IS THAT WE WOULD NEED TO CHANGE THE NUMBER 100 EVERY TIME SO TO SOLVE THIS AND MAKE IT AUTOMATICS WE DO THIS
+
+
+## CODE 2 ##
+
+#include <iostream>
+
+int main(){
+    
+    const int SIZE = 100
+    std::string foods[SIZE];
+    
+    fill(foods, foods + SIZE, "pizza");
+    
+    for(std::string food : foods){
+        
+        std::cout << food << '\n';
+        
+    }
+    
+    
+    
+}
+
+
+IF WE WANTED TO FIND THE MIDDLE POINT OR CUT SPACE IN HALF AND NOT USE THE OTHER DEDICATE SPACE/MEMORY WE WOULD DO THIS 
+(it would print out 50 instead of 100) AND IF WE WANTED TO HAVE THE 1ST HALF SAY PIZZA AND THE 2ND HALF SAY BURGER WE 
+WOULD DO THIS
+
+
+## CODE 3 ##
+
+#include <iostream>
+
+int main(){
+    
+    const int SIZE = 100;
+    std::string foods[SIZE];
+    
+    fill(foods, foods + (SIZE/2), "pizza");
+    fill(foods + (SIZE/2), foods + SIZE, "hamburgers");
+    
+    for(std::string food : foods){
+        
+        std::cout << food << '\n';
+        
+    }
+    
+    
+    
+}
+
+WE WOULD SPLIT IT INTO 3 GROUPS USING 100 BUT SEE WHAT HAPPENS (YOU WILL NOTICE THAT THE 100TH WORD IS PRINTED OUT BUT AS A BLANK 
+SPACE/WHITE LINE)
+
+
+## CODE 4 ##
+
+#include <iostream>
+
+int main(){
+    
+    const int SIZE = 100;
+    std::string foods[SIZE];
+    
+    fill(foods, foods + (SIZE/3), "pizza");
+    fill(foods + (SIZE/2), foods + SIZE, "hamburgers");
+    fill(foods + (SIZE/2), foods + SIZE, "hotdogs");
+    
+    for(std::string food : foods){
+        
+        std::cout << food << '\n';
+        
+    }
+    
+    
+    
+}
+
  
  
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  
  
